@@ -50,3 +50,5 @@ function getNestedRecordsExample() {
     },
   ];
 }
+
+console.log(getNestedRecordsExample())
