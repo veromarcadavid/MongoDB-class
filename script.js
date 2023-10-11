@@ -107,7 +107,11 @@ const estudianteMatricula = arr.filter(
     registro => registro.detalles.descripcion === 'matricula condicional'
 )
 
-const nombreMatricula = estudianteMatricula.map(getNombre);
+function getCorreo(item) {
+  return [item.detalles.contacto.email];
+}
 
-document.getElementById('output3').innerHTML = "Estudiantes con matrícula condicional: " + nombreMatricula;
+const correoMatricula = estudianteMatricula.map(getCorreo);
+
+document.getElementById('output3').innerHTML = "Estudiantes con matrícula condicional: " + correoMatricula;
 
