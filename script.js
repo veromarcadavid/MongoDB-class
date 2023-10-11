@@ -1,5 +1,4 @@
-function getNestedRecordsExample() {
-  return [
+const getNestedRecordsExample = () => [
     {
       id: 1,
       nombre: 'Camila Lopez',
@@ -47,8 +46,22 @@ function getNestedRecordsExample() {
         },
 		valorMatricula: 600000
       },
-    },
-  ];
-}
+    }
+];
 
-console.log(getNestedRecordsExample())
+function sumar(arr){
+  var total=arr.reduce(function(accumulator, currentElement){
+  return accumulator + currentElement;
+  })
+  return total;
+ } 
+
+const arr= getNestedRecordsExample();
+
+var arrayMatricula=[];
+
+arr.forEach((currentElement)=> arrayMatricula.push((Object.values(currentElement)[2].valorMatricula)));
+
+const suma = sumar(arrayMatricula);
+
+document.getElementById('output').innerHTML = "La suma de las matriculas es: $" + suma;
